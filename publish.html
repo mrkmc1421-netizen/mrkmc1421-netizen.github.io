@@ -18,3 +18,18 @@
   <script src="publish.js"></script>
 </body>
   </html>
+document.getElementById("exportBtn").addEventListener("click", () => {
+  const program = buildProgram();
+
+  const project = {
+    name: prompt("Project name?"),
+    author: prompt("Your name?"),
+    program
+  };
+
+  const community = JSON.parse(localStorage.getItem("dolphinCommunity") || "[]");
+  community.push(project);
+  localStorage.setItem("dolphinCommunity", JSON.stringify(community));
+
+  alert("🐬 Project published to DolphinMod Community! Check it out");
+});
