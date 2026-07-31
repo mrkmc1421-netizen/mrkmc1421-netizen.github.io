@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DolphinMod Project Viewer</title>
+</head>
+
+<body>
+  <h1 id="title"></h1>
+
+  <button id="runBtn">Run ▶</button>
+
+  <script src="scriptbuilder.js"></script>
+  <script src="runtime/vm.js"></script>
+  <script src="runtime/renderer.js"></script>
+
+  <script>
+    const id = new URLSearchParams(window.location.search).get("id");
+    const projects = JSON.parse(localStorage.getItem("dolphinCommunity") || "[]");
+    const project = projects[id];
+
+    document.getElementById("title").textContent = project.name;
+
+    document.getElementById("runBtn").addEventListener("click", () => {
+      DolphinVM.run(project.program);
+    });
+  </script>
+</body>
+  </html>
