@@ -1,0 +1,30 @@
+-- DolphinMod VM 🐬
+local VM = {}
+VM.__index = VM
+
+function VM.new()
+    local self = setmetatable({}, VM)
+    self.runtime = {
+        blocks = {}
+    }
+    return self
+end
+
+function VM:registerBlock(opcode, func)
+    self.runtime.blocks[opcode] = func
+end
+
+function VM:callBlock(opcode, args)
+    local block = self.runtime.blocks[opcode]
+    if block then
+        return block(args or {})
+    else
+        print("⚠️ Unknown block. Cannot run!:", opcode)
+    end
+end
+
+function VM:start()
+    print("🐬 VM started")
+end
+
+return VM
