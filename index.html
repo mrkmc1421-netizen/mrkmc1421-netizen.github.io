@@ -28,3 +28,59 @@ function VM:start()
 end
 
 return VM
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DolphinMod GUI 🐬</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #0af, #003);
+      color: #fff;
+    }
+
+    #app {
+      display: grid;
+      grid-template-columns: 260px 1fr 260px;
+      grid-template-rows: auto 1fr;
+      height: 100vh;
+      grid-template-areas:
+        "header header header"
+        "palette stage console";
+    }
+
+    header {
+      grid-area: header;
+      padding: 10px 16px;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    header button {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: none;
+      background: #0ff;
+      color: #003;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #palette {
+      grid-area: palette;
+      padding: 10px;
+      background: rgba(0, 0, 40, 0.7);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      overflow-y: auto;
+    }
+
+    #palette
