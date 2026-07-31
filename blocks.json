@@ -1,0 +1,67 @@
+{fetch("blocks.json")
+  .then(res => res.json())
+  .then(data => loadBlocks(data));
+  function loadBlocks(data) {
+  const sidebar = document.getElementById("sidebar");
+
+  Object.values(data).forEach(category => {
+    const title = document.createElement("h2");
+    title.textContent = category.name;
+    title.style.color = category.color;
+    sidebar.appendChild(title);
+
+    category.blocks.forEach(block => {
+      const div = document.createElement("div");
+      div.className = "block";
+      div.setAttribute("draggable", "true");
+      div.dataset.opcode = block.opcode;
+      div.style.background = category.color;
+      div.textContent = block.label;
+      sidebar.appendChild(div);
+    });
+  });
+}
+  "scratch": {
+    "name": "Scratch Blocks",
+    "color": "#4C97FF",
+    "blocks": [
+      {
+        "opcode": "motion_move",
+        "label": "move (STEPS) steps",
+        "args": {
+          "STEPS": { "type": "number", "default": 10 }
+        }
+      },
+      {
+        "opcode": "motion_turn",
+        "label": "turn (DEGREES) degrees",
+        "args": {
+          "DEGREES": { "type": "number", "default": 15 }
+        }
+      },
+      {
+        "opcode": "looks_say",
+        "label": "say (MESSAGE)",
+        "args": {
+          "MESSAGE": { "type": "string", "default": "Hello!" }
+        }
+      }
+    ]
+  },
+
+  "penguinmod": {
+    "name": "PenguinMod Blocks",
+    "color": "#00C8FF",
+    "blocks": [
+      {
+        "opcode": "pm_js",
+        "label": "run JS (CODE)",
+        "args": {
+          "CODE": { "type": "string", "default": "console.log('hi')" }
+        }
+      },
+      {
+        "opcode": "pm_fetch",
+        "label": "fetch URL (URL)",
+        "args": {
+          "URL": { "type":
