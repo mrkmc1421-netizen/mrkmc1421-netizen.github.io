@@ -15,3 +15,4 @@ document.getElementById("createSprite").addEventListener("click", () => {
   DolphinSprites.push(sprite);
   console.log("🐬 Created sprite:", sprite);
 });
+window.DolphinSelectedSprite = 0;
