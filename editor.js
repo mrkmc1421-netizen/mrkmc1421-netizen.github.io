@@ -32,3 +32,4 @@ stage.addEventListener("drop", e => {
 
   stage.appendChild(node);
 });
+<div id="userDisplay"></div>
