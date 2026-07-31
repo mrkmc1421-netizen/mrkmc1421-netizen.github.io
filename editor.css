@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  background: #002;
+  color: #fff;
+  font-family: system-ui;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  height: 100vh;
+}
+
+#sidebar {
+  background: #024;
+  padding: 12px;
+  border-right: 2px solid #0af;
+}
+
+.block {
+  background: #0af;
+  color: #003;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: grab;
+}
+
+#editor {
+  background: #001;
+  position: relative;
+}
+
+#stage {
+  width: 480px;
+  height: 360px;
+  background: radial-gradient(circle at top, #0ff, #004);
+  border-radius: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 40px #0ff6;
+}
