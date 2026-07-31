@@ -1,0 +1,22 @@
+.markdown h1, .markdown h2, .markdown h3 {
+  margin-top: 12px;
+  color: #00aaff;
+}
+
+.markdown code {
+  background: #002233;
+  padding: 4px 6px;
+  border-radius: 6px;
+  color: #0af;
+}
+
+.markdown pre {
+  background: #001122;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.markdown ul {
+  padding-left: 20px;
+  }
