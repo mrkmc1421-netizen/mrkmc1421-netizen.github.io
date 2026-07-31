@@ -47,3 +47,12 @@ function renderLoop() {
   // Draw bubbles from hydro_splash
   DolphinVM.state.bubbles = DolphinVM.state.bubbles.filter(b => {
     const age = Date
+// Draw all sprites
+if (window.DolphinSprites) {
+  window.DolphinSprites.forEach(sprite => {
+    ctx.fillStyle = sprite.color;
+    ctx.beginPath();
+    ctx.arc(240 + sprite.x, 180 - sprite.y, sprite.size / 2, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  }
