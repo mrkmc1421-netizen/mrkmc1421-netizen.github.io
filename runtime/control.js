@@ -41,3 +41,23 @@ document.getElementById("stopButton").addEventListener("click", () => {
 
   console.log("🐬 VM + sprites reset");
 });
+document.getElementById("runButton").addEventListener("click", () => {
+  console.log("🌊 SEA START");
+  const program = buildProgram();
+  DolphinVM.run(program);
+});
+
+document.getElementById("stopButton").addEventListener("click", () => {
+  console.log("🔴 STOP WAVE");
+  DolphinVM.state.x = 0;
+  DolphinVM.state.y = 0;
+  DolphinVM.state.direction = 90;
+  DolphinVM.state.bubbles = [];
+
+  if (window.DolphinSprites) {
+    window.DolphinSprites.forEach(sprite => {
+      sprite.x = 0;
+      sprite.y = 0;
+    });
+  }
+});
