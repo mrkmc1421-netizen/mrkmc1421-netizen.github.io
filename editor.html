@@ -78,3 +78,5 @@
 <a href="publish.html">
   <button id="publishBtn">Publish To Community 🌊</button>
   </a>
+const user = localStorage.getItem("dolphinUser");
+document.getElementById("userDisplay").textContent = "Signed in as: " + user;
