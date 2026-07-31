@@ -33,3 +33,7 @@ document.getElementById("exportBtn").addEventListener("click", () => {
 
   alert("🐬 Project published to DolphinMod Community! Check it out");
 });
+const analytics = JSON.parse(localStorage.getItem("dolphinAnalytics") || "{}");
+analytics.publishes = analytics.publishes || [];
+analytics.publishes.push(Date.now());
+localStorage.setItem("dolphinAnalytics", JSON.stringify(analytics));
