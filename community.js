@@ -22,3 +22,7 @@ projects.forEach((proj, index) => {
 
   list.appendChild(card);
 });
+const comments = JSON.parse(localStorage.getItem("dolphinComments") || "{}");
+const count = (comments[index] || []).length;
+
+card.innerHTML += `<p>${count} comments</p>`;
