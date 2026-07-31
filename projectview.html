@@ -26,3 +26,7 @@
   </script>
 </body>
   </html>
+const analytics = JSON.parse(localStorage.getItem("dolphinAnalytics") || "{}");
+analytics.views = analytics.views || [];
+analytics.views.push(Date.now());
+localStorage.setItem("dolphinAnalytics", JSON.stringify(analytics));
