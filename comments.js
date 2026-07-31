@@ -15,7 +15,7 @@ function refreshComments() {
   allComments[id].forEach(c => {
     const div = document.createElement("div");
     div.className = "comment";
-    div.textContent = `${c.user}: ${c.text}`;
+    div.innerHTML = `${c.user}: ${renderEmotesInText(c.text)}`;
     commentList.appendChild(div);
   });
 }
