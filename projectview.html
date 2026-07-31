@@ -30,3 +30,11 @@ const analytics = JSON.parse(localStorage.getItem("dolphinAnalytics") || "{}");
 analytics.views = analytics.views || [];
 analytics.views.push(Date.now());
 localStorage.setItem("dolphinAnalytics", JSON.stringify(analytics));
+<h2>Comments</h2>
+
+<div id="commentList"></div>
+
+<input id="commentInput" placeholder="Write a comment...">
+<button id="commentBtn">Post</button>
+
+<script src="comments.js"></script>
